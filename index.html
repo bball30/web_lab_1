@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ЛР1</title>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<table id="big_table">
+    <tr>
+        <td id="header" colspan="2" >Выполнил: Васильев Максим Олегович<br>группа: Р3213 вариант: 13103</td>
+    </tr>
+    <tr>
+        <td>
+                <table id="form_table">
+                    <tr>
+                        <td>
+                            Введите координату X:
+                        </td>
+                        <td>
+                            Введите координату Y:
+                        </td>
+                        <td>
+                            Введите значение R:
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select id="x_field" name="x_field" class="form">
+                                <option value="-2">-2</option>
+                                <option value="-1.5">-1.5</option>
+                                <option value="-1">-1</option>
+                                <option value="-0.5">-0.5</option>
+                                <option value="0">0</option>
+                                <option value="0.5">0.5</option>
+                                <option value="1">1</option>
+                                <option value="1.5">1.5</option>
+                                <option value="2">2</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="text" id="y_field" class="form" placeholder="от -5 до 3">
+                        </td>
+                        <td>
+                            <p><input class="form radio" type="radio" name="R" value="1">1</p>
+                            <p><input class="form radio" type="radio" name="R" value="1.5">1.5</p>
+                            <p><input class="form radio" type="radio" name="R" value="2">2</p>
+                            <p><input class="form radio" type="radio" name="R" value="2.5">2.5</p>
+                            <p><input class="form radio" type="radio" name="R" value="3">3</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <button  type="submit" id="form_submit"  onclick="submit()">Отправить</button>
+                        </td>
+                    </tr>
+                </table>
+        </td>
+        <td><img id="areas_img" src="images/areas.png" alt="Зона попадания" title="Зона попадания"/></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <table id="result-table">
+                <tr class="table-header">
+                    <th class="coords-col">X</th>
+                    <th class="coords-col">Y</th>
+                    <th class="coords-col">R</th>
+                    <th class="time-col">Время отправки запроса</th>
+                    <th class="time-col">Время выполнения скрипта</th>
+                    <th class="hit-col">Результат</th>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<script src="js/validation.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+</html>
