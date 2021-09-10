@@ -2,9 +2,20 @@
 
 require_once("json_encode.php");
 
+session_start();
+
+if (!isset($_SESSION['requests']) || !is_array($_SESSION['requests'])) {
+    $_SESSION['requests'] = [];
+}
+
 function validateX($xVal)
 {
-    return isset($xVal);
+    $xVal_array = array("-2", "-1.5", "-1", "-0.5", "0", "0.5", "1", "1.5", "2");
+    if (!isset($xVal)) {
+
+        return false;
+}
+    return in_array($xVal, $xVal_array);
 }
 
 function validateY($yVal)
@@ -13,12 +24,16 @@ function validateY($yVal)
         return false;
 
     $numY = str_replace(',', '.', $yVal);
-    return is_numeric($numY) && $numY >= -5 && $numY <= 3;
+    return is_numeric($numY) && $numY > -5 && $numY < 3;
 }
 
 function validateR($rVal)
 {
-    return isset($rVal);
+    $rVal_array = array("1", "1.5", "2", "2.5", "3");
+    if (!isset($rVal)) {
+        return false;
+    }
+    return in_array($rVal, $rVal_array);
 }
 
 function validateForm($xVal, $yVal, $rVal)

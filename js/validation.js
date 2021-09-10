@@ -6,6 +6,9 @@ function validateX() {
 }
 
 function validateY() {
+    if (document.getElementById("y_field").value.length > 8) {
+        document.getElementById("y_field").value = document.getElementById("y_field").value.slice(0, 8);
+    }
     y = document.getElementById("y_field").value.replace(",", ".");
     if (y === "") {
         alert("Введите координату Y!");
